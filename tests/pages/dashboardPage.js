@@ -1,7 +1,7 @@
-import { BasePage } from "../base/basePage";
-import { DashboardSelectors } from "../resources/selectors/dashboardSelectors";
+import { PageBase } from "../base/pageBase";
+import { DashboardSelectors } from "../resources/selectors/pages/dashboardSelectors";
 
-exports.DashboardPage = class DashboardPage extends BasePage {
+exports.DashboardPage = class DashboardPage extends PageBase {
     constructor(page) {
         super()
         this.page = page;
@@ -14,5 +14,5 @@ exports.DashboardPage = class DashboardPage extends BasePage {
 
     async getDashboardHeader() {
         return await this.page.locator(this.dashboardSelectors.getDashboardHeader());
-    }  
+    }
 };

@@ -1,8 +1,8 @@
-import { BasePage } from "../base/basePage.js";
-import { LoginSelectors } from "../resources/selectors/loginSelectors.js";
-import { Paths } from "../base/paths.js";
+import { PageBase } from "../base/pageBase";
+import { LoginSelectors } from "../resources/selectors/pages/loginSelectors";
+import { Paths } from "../base/paths";
 
-exports.LoginPage = class LoginPage extends BasePage {
+exports.LoginPage = class LoginPage extends PageBase {
     constructor(page) {
         super()
         this.page = page;
@@ -26,7 +26,7 @@ exports.LoginPage = class LoginPage extends BasePage {
         await this.page.click(this.loginSelectors.getLoginButton());
     }
 
-    async getErrorMessage() {
-        return await this.page.textContent(this.loginSelectors.getErrorMessage());
+    async getInvalidCredentialsMessage() {
+        return await this.page.locator(this.loginSelectors.getInvalidCredentialsMessage());
     }
 }

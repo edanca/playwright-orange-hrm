@@ -10,5 +10,5 @@ exports.LoginSelectors = class LoginSelectors {
     getUsernameInput() { return this.usernameInput; }
     getPasswordInput() { return this.passwordInput; }
     getLoginButton() { return this.loginButton; }
-    getErrorMessage() { return this.invalidCredentialsMessage; }
+    getInvalidCredentialsMessage() { return this.invalidCredentialsMessage; }
 }
